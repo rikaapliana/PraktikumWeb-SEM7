@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SatuanController;
 
 // Halaman utama
 Route::get('/', function () {
@@ -28,3 +29,6 @@ Route::resource('categories', CategoryController::class);
 
 // Rute untuk menampilkan kategori berdasarkan ID
 Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
+
+// Routes untuk Satuan 
+Route::resource('satuan', SatuanController::class);
