@@ -32,3 +32,9 @@ Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categ
 
 // Routes untuk Satuan 
 Route::resource('satuan', SatuanController::class);
+
+//Routes untuk PrintPDF
+Route::get('printpdf', [UserController ::class, 'printPDF'])->name('printuser');
+
+//Routes untuk print Excell
+Route::get('/printexcel', [UserController::class, 'userExcel'])->name('exportuser');

@@ -11,7 +11,12 @@
     </ol>
     
     <div class="card mb-4">
-        <div class="card-header"></div>
+        <div class="card-header">
+            <div class="float-end">
+                <a href="{{ route('printuser') }}" class="btn btn-warning btn-md me-2">Print User</a>
+                <a href="{{ route('exportuser') }}" class="btn btn-danger btn-md">Export User</a>
+            </div>
+        </div>
         <div class="card-body">
             <div class="row">
                 <table class="table table-bordered data-table">
