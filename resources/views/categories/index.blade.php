@@ -3,6 +3,8 @@
 @section('content')
 <div class="container mt-4">
     <h1>Categories</h1>
+    <a href="{{ route('categories.pdf') }}" class="btn btn-danger">Download PDF</a>
+    <a href="{{ route('categories.excel') }}" class="btn btn-success">Download Excel</a>
     <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Add Category</a>
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

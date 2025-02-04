@@ -11,6 +11,9 @@
     <div class="card mb-4">
         <div class="card-body">
             <a href="{{ route('products.create') }}" class="btn btn-md btn-success mb-3">ADD PRODUCT</a>
+            <a href="{{ route('products.pdf') }}" class="btn btn-primary">Download PDF</a>
+            <a href="{{ route('products.excel') }}" class="btn btn-success">Download Excel</a>
+
             <div class="row">
                 <table class="table table-bordered data-table">
                     <thead>

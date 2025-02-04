@@ -7,6 +7,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ProductsExport;
 
 class ProductController extends Controller
 {
@@ -158,4 +161,17 @@ class ProductController extends Controller
     $product = Product::findOrFail($id);
     return view('products.edit', compact('product'));
 }
+
+public function printPdf()
+{
+    $products = Product::all();
+    $pdf = PDF::loadView('products.pdf', compact('products')); // Mengambil view products.pdf
+    return $pdf->download('products.pdf'); // Mengunduh PDF
+}
+
+public function exportExcel()
+{
+    return Excel::download(new ProductsExport, 'products.xlsx'); // Mengunduh Excel
+}
+
 }
